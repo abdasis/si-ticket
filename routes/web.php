@@ -14,7 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+});
+
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function (){
+    /*route untuk data ticket*/
+    Route::group(['prefix' => 'ticket'], function(){
+        Route::get('/', \App\Http\Livewire\Ticket\Semua::class)->name('ticket.semua');
+        Route::get('tambah', \App\Http\Livewire\Ticket\Tambah::class)->name('ticket.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Ticket\Sunting::class)->name('ticket.sunting');
+    });
+
+    /*Route untuk data pengguna*/
+    Route::group(['prefix' => 'pengguna'], function (){
+        Route::get('/', \App\Http\Livewire\Pengguna\Semua::class)->name('pengguna.semua');
+        Route::get('tambah', \App\Http\Livewire\Pengguna\Tambah::class)->name('pengguna.tambah');
+        Route::get('sunting/{id}', \App\Http\Livewire\Pengguna\Sunting::class)->name('pengguna.sunting');
+        Route::get('profile', \App\Http\Livewire\Pengguna\Detail::class)->name('pengguna.detail');
+
+    });
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
