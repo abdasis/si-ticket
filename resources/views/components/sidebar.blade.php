@@ -1,7 +1,7 @@
 <aside class="main-sidebar main-sidebar-custom sidebar-light-blue elevation-1">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link border-light">
-        <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
+    <a href="{{route('dashboard')}}" class="brand-link border-light">
+        <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-1" style="opacity: .8">
         <span class="brand-text font-weight-light">SI-TIKET</span>
     </a>
 
@@ -10,7 +10,7 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 pt-3 mb-3 d-flex border-0 bg-light rounded">
             <div class="image">
-                <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-1" alt="User Image">
+                <img src="{{asset('dist/img/user2-160x160.jpg')}}" class="img-circle elevation-1" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{Auth::user()->name}}</a>
@@ -93,7 +93,7 @@
 
     <div class="sidebar-custom bg-light border-light">
         <a href="#" class="btn btn-link text-secondary"><i class="fas fa-cogs"></i></a>
-        <a href="#" class="btn btn-secondary btn-sm hide-on-collapse pos-right">Help</a>
+        <a href="#" class="btn btn-light btn-sm hide-on-collapse pos-right">Help</a>
     </div>
     <!-- /.sidebar-custom -->
 </aside>

@@ -3,7 +3,7 @@
         <select
             wire:model="perPage"
             id="perPage"
-            class="form-control"
+            class="custom-select custom-select-sm"
         >
             @foreach ($perPageAccepted as $item)
                 <option value="{{ $item }}">{{ $item === -1 ? __('All') : $item }}</option>
